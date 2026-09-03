@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>For Badi Mummy</title>
+<meta name="description" content="A birthday journey through photos, a poem, and a song — for Badi Mummy.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%AA%94%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Poppins:wght@400;500;600&family=Kalam:wght@400;700&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="stage">
+  <canvas id="ambient-canvas" aria-hidden="true"></canvas>
+
+  <section class="hero" id="hero">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <p class="eyebrow" id="heroEyebrow"></p>
+    <h1 class="hero-title" id="heroTitleWrap"><span id="heroTitle" class="gold-shine"></span><br><span id="heroName" class="name"></span></h1>
+    <p class="hero-sub" id="heroSub"></p>
+    <button class="scroll-cue" id="scrollCue" type="button">
+      <span>Begin the journey</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 4v16M6 14l6 6 6-6"/></svg>
+    </button>
+  </section>
+
+  <section class="journey" id="journey">
+    <div class="wrap section-head">
+      <h2>Your Story, One Chapter at a Time</h2>
+      <p>Tap any stop along the path to open the memories.</p>
+    </div>
+    <div class="wrap path-wrap">
+      <div class="spine-track" aria-hidden="true"></div>
+      <div class="spine-fill" id="spineFill" aria-hidden="true"></div>
+      <ol class="stops" id="stops"></ol>
+    </div>
+  </section>
+
+  <section class="poem-section" id="poem">
+    <div class="wrap">
+      <div class="scroll" id="scroll">
+        <span class="scroll-rod scroll-rod-top" aria-hidden="true"></span>
+        <div class="scroll-paper">
+          <button class="scroll-toggle" id="scrollToggle" type="button" aria-expanded="false" aria-controls="scrollContent">
+            <span class="scroll-icon" aria-hidden="true">📜</span>
+            <span id="scrollLabel">Tap to unroll the scroll</span>
+          </button>
+          <div class="scroll-content" id="scrollContent">
+            <div class="scroll-content-inner">
+              <div class="poem-border" aria-hidden="true"></div>
+              <p class="poem-kicker">A poem, just for you</p>
+              <div class="poem-body" id="poemBody"></div>
+              <p class="poem-sign" id="poemSign"></p>
+            </div>
+          </div>
+        </div>
+        <span class="scroll-rod scroll-rod-bottom" aria-hidden="true"></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="finale" id="finale">
+    <canvas id="finale-canvas" aria-hidden="true"></canvas>
+    <h2 id="finaleTitle" class="gold-shine"></h2>
+    <p id="finaleMsg"></p>
+    <button class="love-btn" id="loveBtn" type="button">Send Love Back 💛</button>
+    <p class="finale-sign" id="finaleSign"></p>
+  </section>
+</div>
+
+<button class="mute-toggle" id="muteToggle" type="button" aria-label="Mute" title="Mute">🔊</button>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightboxTitle" hidden>
+  <div class="lightbox-inner">
+    <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close">✕</button>
+    <h3 id="lightboxTitle"></h3>
+    <p class="lb-blurb" id="lightboxBlurb"></p>
+    <div class="carousel" id="carousel">
+      <button class="car-nav" id="carPrev" type="button" aria-label="Previous photo">‹</button>
+      <div class="car-track-wrap"><div class="car-track" id="carTrack"></div></div>
+      <button class="car-nav" id="carNext" type="button" aria-label="Next photo">›</button>
+    </div>
+    <div class="car-dots" id="carDots"></div>
+    <p class="collage-hint" id="collageHint" hidden>Tap any photo to bring it forward</p>
+    <div class="collage-frame" id="collageFrame" hidden></div>
+  </div>
+</div>
+
+<script src="assets/js/content.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
